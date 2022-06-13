@@ -1,0 +1,11 @@
+.UserTravelInput ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.UserTravelInput .flex {
+  margin: 10vh auto;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+}
