@@ -1,18 +1,45 @@
 // import css
 import "./UserTravelInput.css";
+import { useState } from "react";
+import axios from "axios";
 
 export default function UserTravelInput() {
+  const [location, setLocation] = useState("");
+
+  async function onChange(event) {
+    setLocation(event.target.value);
+  }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const body = JSON.stringify({
+      id: 5,
+      name: location,
+    });
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const result = await axios.post(
+      "http://localhost:3001/locations",
+      body,
+      config
+    );
+  }
+
   return (
     <div className="UserTravelInput">
       <h1>Your Dream Travel Locations</h1>
-      <form action="">
+      <form onSubmit={(event) => handleSubmit(event)}>
         <input
           type="text"
           name="location"
           id="location"
           placeholder="Type location"
+          onChange={(event) => onChange(event)}
+          autoComplete="off"
         />
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       <div className="flex">
         <section className="userInput">
