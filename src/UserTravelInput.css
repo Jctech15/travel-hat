@@ -9,3 +9,21 @@
   justify-content: space-around;
   border: 2px solid black;
 }
+
+.UserTravelInput li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserTravelInput .options button {
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  margin: auto 0.1rem;
+  border-radius: 0.3rem;
+}
+.UserTravelInput .options button:hover {
+  background-color: white;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+}

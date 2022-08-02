@@ -45,8 +45,20 @@ export default function UserTravelInput() {
         <section className="userInput">
           <h3>Locations</h3>
           <ul>
-            <li>Paris</li>
-            <li>USA</li>
+            <li>
+              Paris{" "}
+              <span className="options">
+                <button>x</button>
+                <button>c</button>
+              </span>
+            </li>
+            <li>
+              USA{" "}
+              <span className="options">
+                <button>x</button>
+                <button>c</button>
+              </span>
+            </li>
           </ul>
         </section>
         <section className="locationDetails">
