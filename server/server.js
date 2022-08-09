@@ -37,16 +37,18 @@ MongoClient.connect(connectionString, (err, client) => {
     response.send("<h1>Hello World!</h1>");
   });
 
-  app.get("/:id/locations", async (req, res) => {
-    const data = await locationsCollection.find({
-      id: Number(req.params.id),
-    });
-    const result = data.map(async (value) => {
-      return value.hasNext() ? value.next() : null;
-    });
-    console.log(result);
-    // res.send(data);
+  app.get("/all/locations", async (req, res) => {
+    const data = await locationsCollection.find().toArray();
+    res.send(data);
   });
+
+  // app.get("/:id/locations", async (req, res) => {
+  //   const data = await locationsCollection.findOne({
+  //     id: Number(req.params.id),
+  //   });
+
+  //   res.send(data);
+  // });
 });
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
