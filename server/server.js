@@ -23,7 +23,7 @@ MongoClient.connect(connectionString, (err, client) => {
     locationsCollection
       .insertOne(request.body)
       .then((result) => {
-        console.log(result);
+        response.send(result);
       })
       .catch((error) => console.error(error));
   });
@@ -37,11 +37,23 @@ MongoClient.connect(connectionString, (err, client) => {
     response.send("<h1>Hello World!</h1>");
   });
 
-  app.get("/all/locations", async (req, res) => {
+  app.get("/all/locations", async (request, response) => {
     const data = await locationsCollection.find().toArray();
-    res.send(data);
+    response.send(data);
   });
 
+  app.delete("/locations/:id", async (request, response) => {
+    const deleteRequest = await locationsCollection.deleteOne({
+      id: request.params.id,
+    });
+    const resp = {
+      status: 200,
+    };
+    if (deleteRequest.deletedCount === 0) {
+      resp.status = 500;
+    }
+    response.send(resp);
+  });
   // app.get("/:id/locations", async (req, res) => {
   //   const data = await locationsCollection.findOne({
   //     id: Number(req.params.id),

@@ -16,14 +16,14 @@
 }
 
 .UserTravelInput .options button {
-  background-color: dodgerblue;
+  background-color: #61c0bf;
   color: white;
   border: none;
-  margin: auto 0.1rem;
+  margin: auto 0.2rem;
   border-radius: 0.3rem;
 }
 .UserTravelInput .options button:hover {
   background-color: white;
-  color: dodgerblue;
-  border: 1px solid dodgerblue;
+  color: #61c0bf;
+  border: 1px solid #61c0bf;
 }
