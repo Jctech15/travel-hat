@@ -5,15 +5,6 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 
-/* JYE TODO:
-1) Put an "x" next to each item - 1
-2) Add a onClick on the "x" - 1
-3) Have the onClick function delete the record from Database - 2
-4) If delete is successful, delete the location from the screen - 2
-
-
-*/
-
 export default function UserTravelInput() {
   const [location, setLocation] = useState("");
   const [allLocations, setAllLocations] = useState([]);
@@ -66,22 +57,40 @@ export default function UserTravelInput() {
   }
   return (
     <div className="UserTravelInput">
-      <h1>Your Dream Travel Locations</h1>
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          placeholder="Type location"
-          onChange={(event) => onChange(event)}
-          autoComplete="off"
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <div className="flex">
-        <section className="userInput">
-          <h3>Locations</h3>
+      <header>
+        <h1>Travel Hat</h1>
+      </header>
+      <main>
+        <h2>Your Dream Travel Locations</h2>
+        <h3>Instructions</h3>
+        <div className="instructions">
+          <ol>
+            <li>Type the name of the country you want to visit</li>
+            <li>
+              Click the "shake" button to receive a randomly selected country
+            </li>
+            <li>Go Book your flight!</li>
+          </ol>
+          <p>*You can always delete using the "x" button*</p>
+        </div>
+
+        <form onSubmit={(event) => handleSubmit(event)}>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Type location"
+            onChange={(event) => onChange(event)}
+            autoComplete="off"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </main>
+
+      <section className="userInput">
+        <div className="flex">
           <ul>
+            <h4>Locations</h4>
             {allLocations.map((location) => {
               return (
                 <li>
@@ -99,11 +108,11 @@ export default function UserTravelInput() {
               );
             })}{" "}
           </ul>
-        </section>
-        <section className="locationDetails">
-          <h3>API</h3>
-        </section>
-      </div>
+          <button className="tophatButton">
+            <img src="img/tophat.png" alt="tophat" />
+          </button>
+        </div>
+      </section>
     </div>
   );
 }

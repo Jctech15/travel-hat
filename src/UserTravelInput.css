@@ -1,18 +1,23 @@
+.UserTravelInput {
+  margin: auto;
+  border: 2px dotted black;
+  text-align: center;
+}
+
+.UserTravelInput .instructions ol {
+  text-align: center;
+  list-style-position: inside;
+}
+
 .UserTravelInput ul {
   padding: 0;
   list-style-type: none;
 }
 
 .UserTravelInput .flex {
-  margin: 10vh auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  border: 2px solid black;
-}
-
-.UserTravelInput li {
-  display: flex;
-  justify-content: space-between;
 }
 
 .UserTravelInput .options button {
@@ -26,4 +31,32 @@
   background-color: white;
   color: #61c0bf;
   border: 1px solid #61c0bf;
+}
+
+.UserTravelInput .tophatButton {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.UserTravelInput .tophatButton:hover {
+  animation: tilt-n-move-shaking 0.5s infinite;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1.5);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg) scale(1.5);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg) scale(1.5);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg) scale(1.5);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1.5);
+  }
 }
