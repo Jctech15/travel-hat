@@ -1,10 +1,10 @@
 import "./App.css";
-import UserTravelInput from "./UserTravelInput";
+import UserTravel from "./UserTravel";
 
 function App() {
   return (
     <div className="App">
-      <UserTravelInput />
+      <UserTravel />
     </div>
   );
 }

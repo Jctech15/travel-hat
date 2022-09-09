@@ -1,45 +1,60 @@
-.UserTravelInput {
+.UserTravel {
   margin: auto;
-  border: 2px dotted black;
   text-align: center;
 }
 
-.UserTravelInput .instructions ol {
+.UserTravel h1 {
+  margin: 0 auto;
+  padding: 5rem 0 2rem;
+}
+
+.UserTravel .instructions ol {
   text-align: center;
   list-style-position: inside;
 }
 
-.UserTravelInput ul {
-  padding: 0;
-  list-style-type: none;
+.UserTravel .userInput {
+  border: 2px solid red;
 }
 
-.UserTravelInput .flex {
+.UserTravel .flex {
+  padding: 0;
+  list-style-type: none;
+  height: 50vh;
+  border: 2px solid blue;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.UserTravelInput .options button {
+.UserTravel .displayedLocation {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  color: rgb(28, 27, 29);
+}
+
+.UserTravel .deleteButton button {
   background-color: #61c0bf;
   color: white;
   border: none;
   margin: auto 0.2rem;
   border-radius: 0.3rem;
 }
-.UserTravelInput .options button:hover {
+.UserTravel .deleteButton button:hover {
   background-color: white;
   color: #61c0bf;
   border: 1px solid #61c0bf;
 }
 
-.UserTravelInput .tophatButton {
+.UserTravel .tophatButton {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
+  padding: 5rem 0;
 }
 
-.UserTravelInput .tophatButton:hover {
+.UserTravel .tophatButton:hover {
   animation: tilt-n-move-shaking 0.5s infinite;
 }
 
