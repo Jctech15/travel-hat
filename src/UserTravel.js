@@ -1,9 +1,9 @@
-// import css
-import "./UserTravel.css";
-import UserSubmitButton from "./UserSubmitButton";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import "./UserTravel.css";
+import TopHat from "./TopHat";
+import UserSubmitButton from "./UserSubmitButton";
 
 export default function UserTravel() {
   const [location, setLocation] = useState("");
@@ -58,9 +58,12 @@ export default function UserTravel() {
   }
   return (
     <div className="UserTravel">
-      <header>
-        <h1>Travel Hat</h1>
-      </header>
+      <div className="background">
+        <header>
+          <h1>Travel Hat</h1>
+        </header>
+      </div>
+
       <main>
         <h2>Your Dream Travel Locations</h2>
         <p>
@@ -70,7 +73,7 @@ export default function UserTravel() {
       </main>
       <section className="userInput">
         <ul className="flex">
-          <li>
+          <li className="instructions section">
             <h3>Instructions</h3>
             <p>Type the name of the country you want to visit </p>
             <UserSubmitButton
@@ -79,7 +82,7 @@ export default function UserTravel() {
               location={location}
             />
           </li>
-          <li>
+          <li className="location section">
             <h3>Locations</h3>
             <p>
               This is the list of all the countries you entered! <br />
@@ -104,14 +107,29 @@ export default function UserTravel() {
               })}
             </ul>
           </li>
-          <li>
+          <li className="tophat section">
             <h3>Magic Hat!</h3>
-            <button className="tophatButton">
-              <img src="img/tophat.png" alt="tophat" />
-            </button>
+            <p>
+              The hat will shake once you put your mouse over the hat. <br />
+              Click the hat to randomly selected a vacation location!
+            </p>
+            <TopHat />
           </li>
         </ul>
       </section>
+      <footer>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+        reiciendis? Adipisci voluptatibus ducimus doloremque in necessitatibus
+        ullam cupiditate illum, tempore quo nihil nam eos est reprehenderit ex
+        quod corrupti, impedit incidunt porro veritatis, iste eius rerum ipsam?
+        Vitae, quibusdam voluptas sequi ex doloribus aliquid fugit eligendi quae
+        quasi perspiciatis non culpa commodi repudiandae quas adipisci facilis
+        quos dolor distinctio deleniti alias laboriosam nobis, nemo maiores
+        provident. Dolores rem repudiandae corrupti minus nostrum deserunt ut
+        corporis? Unde quaerat dicta fuga soluta assumenda saepe tempore
+        quisquam. Laboriosam ipsa sed expedita inventore, commodi corrupti
+        obcaecati eaque sunt et neque ea totam incidunt cum?
+      </footer>
     </div>
   );
 }

@@ -1,11 +1,15 @@
 .UserTravel {
   margin: auto;
   text-align: center;
+  color: black;
 }
 
 .UserTravel h1 {
+  padding: 2rem 0;
   margin: 0 auto;
-  padding: 5rem 0 2rem;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 4.5rem;
 }
 
 .UserTravel .instructions ol {
@@ -13,18 +17,19 @@
   list-style-position: inside;
 }
 
-.UserTravel .userInput {
-  border: 2px solid red;
-}
-
 .UserTravel .flex {
   padding: 0;
   list-style-type: none;
   height: 50vh;
-  border: 2px solid blue;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.UserTravel .section {
+  border: 2px solid yellowgreen;
+  border-radius: 1rem;
+  color: black;
 }
 
 .UserTravel .displayedLocation {
@@ -45,33 +50,4 @@
   background-color: white;
   color: #61c0bf;
   border: 1px solid #61c0bf;
-}
-
-.UserTravel .tophatButton {
-  background-color: transparent;
-  border: transparent;
-  cursor: pointer;
-  padding: 5rem 0;
-}
-
-.UserTravel .tophatButton:hover {
-  animation: tilt-n-move-shaking 0.5s infinite;
-}
-
-@keyframes tilt-n-move-shaking {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(1.5);
-  }
-  25% {
-    transform: translate(5px, 5px) rotate(5deg) scale(1.5);
-  }
-  50% {
-    transform: translate(0, 0) rotate(0deg) scale(1.5);
-  }
-  75% {
-    transform: translate(-5px, 5px) rotate(-5deg) scale(1.5);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg) scale(1.5);
-  }
 }
