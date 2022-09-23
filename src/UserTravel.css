@@ -4,17 +4,38 @@
   color: black;
 }
 
-.UserTravel h1 {
-  padding: 2rem 0;
-  margin: 0 auto;
+.UserTravel h1,
+h2,
+h3 {
   font-family: "Caveat", cursive;
   font-weight: 700;
+}
+
+.UserTravel h1 {
+  padding: 2rem 0 0 0;
+  margin: 0 auto;
+  font-weight: 700;
   font-size: 4.5rem;
+  color: #feb139;
+}
+
+.UserTravel main {
+  margin: 1rem auto;
+}
+
+.UserTravel h2 {
+  font-size: 3.5rem;
+  margin: 1rem 0 0 0;
+  color: #293462;
 }
 
 .UserTravel .instructions ol {
   text-align: center;
   list-style-position: inside;
+}
+
+.UserTravel #threeSections {
+  margin: 4rem auto;
 }
 
 .UserTravel .flex {
@@ -27,9 +48,16 @@
 }
 
 .UserTravel .section {
-  border: 2px solid yellowgreen;
+  border: 2px solid #182747;
   border-radius: 1rem;
   color: black;
+}
+
+.UserTravel .sectionHeader {
+  font-size: 3rem;
+  margin: 0.5rem;
+  font-weight: 700;
+  color: #d61c4e;
 }
 
 .UserTravel .displayedLocation {

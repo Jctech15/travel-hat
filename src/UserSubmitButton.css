@@ -1,0 +1,22 @@
+.UserSubmitButton input[type="text"] {
+  appearance: none;
+  height: 2.3vh;
+  border-radius: 5px;
+}
+
+.UserSubmitButton #submitButton {
+  margin: 0 0.5rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #f8f9d7;
+  background: #f8f9d7;
+  color: #413f42;
+  font-weight: bold;
+}
+
+.UserSubmitButton #submitButton:hover {
+  cursor: pointer;
+  background-color: #ffdeb4;
+  color: #d9534f;
+  border: 1px solid #ffdeb4;
+}

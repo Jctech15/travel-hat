@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./UserTravel.css";
 import TopHat from "./TopHat";
 import UserSubmitButton from "./UserSubmitButton";
+// import UserLocations from "./UserLocations";
 
 export default function UserTravel() {
   const [location, setLocation] = useState("");
@@ -71,23 +72,25 @@ export default function UserTravel() {
           location!
         </p>
       </main>
-      <section className="userInput">
+
+      <section id="threeSections">
         <ul className="flex">
-          <li className="instructions section">
-            <h3>Instructions</h3>
-            <p>Type the name of the country you want to visit </p>
+          <li className="section" id="instructions">
+            <h3 className="sectionHeader">Instructions</h3>
+            <p>Type the name of the place you want to visit! </p>
             <UserSubmitButton
               handleSubmit={handleSubmit}
               onChange={onChange}
               location={location}
             />
           </li>
-          <li className="location section">
-            <h3>Locations</h3>
+          <li className="section" id="locations">
+            <h3 className="sectionHeader">Locations</h3>
             <p>
               This is the list of all the countries you entered! <br />
               Feel free to delete using the "x" button
             </p>
+            {/* <UserLocations /> */}
             <ul className="displayedLocation">
               {allLocations.map((location) => {
                 return (
@@ -107,16 +110,17 @@ export default function UserTravel() {
               })}
             </ul>
           </li>
-          <li className="tophat section">
-            <h3>Magic Hat!</h3>
+          <li className="section" id="tophat">
+            <h3 className="sectionHeader">Magic Hat!</h3>
             <p>
-              The hat will shake once you put your mouse over the hat. <br />
-              Click the hat to randomly selected a vacation location!
+              The hat will shake when you put your mouse over it. <br />
+              Click the hat to receive a random location!
             </p>
             <TopHat />
           </li>
         </ul>
       </section>
+
       <footer>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
         reiciendis? Adipisci voluptatibus ducimus doloremque in necessitatibus
