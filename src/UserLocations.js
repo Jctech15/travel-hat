@@ -1,10 +1,10 @@
-/* import "./UserLocations.css";
+import "./UserLocations.css";
 
 export default function UserLocations(props) {
   return (
     <div className="UserLocations">
       <ul className="displayedLocation">
-        {allLocations.map((location) => {
+        {props.allLocations.map((location) => {
           return (
             <li>
               {location.name}
@@ -12,7 +12,7 @@ export default function UserLocations(props) {
                 <button
                   type="button"
                   value={location.id}
-                  onClick={deleteLocation}
+                  onClick={props.deleteLocation}
                 >
                   x
                 </button>
@@ -24,4 +24,3 @@ export default function UserLocations(props) {
     </div>
   );
 }
- */
