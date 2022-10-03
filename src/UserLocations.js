@@ -7,7 +7,7 @@ export default function UserLocations(props) {
         {props.allLocations.map((location) => {
           return (
             <li>
-              {location.name}
+              <span id="flexGrow">{location.name}</span>
               <span className="deleteButton">
                 <button
                   type="button"

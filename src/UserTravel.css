@@ -72,19 +72,6 @@ h3 {
   color: rgb(28, 27, 29);
 }
 
-.UserTravel .deleteButton button {
-  background-color: #61c0bf;
-  color: white;
-  border: none;
-  margin: auto 0.2rem;
-  border-radius: 0.3rem;
-}
-.UserTravel .deleteButton button:hover {
-  background-color: white;
-  color: #61c0bf;
-  border: 1px solid #61c0bf;
-}
-
 footer {
   margin: 1.5rem;
   padding: 0.7rem;

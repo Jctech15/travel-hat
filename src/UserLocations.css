@@ -1,0 +1,33 @@
+.displayedLocation {
+  overflow-y: auto;
+  height: 18rem;
+  width: 15rem;
+  border: 2px solid black;
+  margin: 1rem auto 2rem;
+  border-radius: 0.2rem;
+}
+
+.displayedLocation li {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.displayedLocation #flexGrow {
+  flex-grow: 2;
+}
+
+.displayedLocation .deleteButton button {
+  background-color: #61c0bf;
+  color: white;
+  border: none;
+  margin: auto 0.2rem;
+  border-radius: 0.3rem;
+}
+.displayedLocation .deleteButton button:hover {
+  background-color: white;
+  color: #61c0bf;
+  border: 1px solid #61c0bf;
+  margin: auto 0.2rem;
+  border-radius: 0.3rem;
+}
