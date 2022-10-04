@@ -1,11 +1,16 @@
+import { useState } from "react";
 import "./TopHat.css";
+import LocationModal from "./LocationModal";
 
 export default function TopHat(props) {
+  const [randomLocationOuput, setRandomLocationOuput] = useState("");
+
   function selectRandomLocation() {
     const randomLocationIndex = Math.floor(
       Math.random() * props.allLocations.length
     );
-    console.log(props.allLocations[randomLocationIndex].name);
+
+    setRandomLocationOuput(props.allLocations[randomLocationIndex].name);
   }
 
   return (
@@ -13,6 +18,8 @@ export default function TopHat(props) {
       <button className="tophatButton" onClick={selectRandomLocation}>
         <img src="img/tophat.png" alt="tophat" />
       </button>
+
+      <LocationModal randomLocationOuput={randomLocationOuput} />
     </div>
   );
 }
