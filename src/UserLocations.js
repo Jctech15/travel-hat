@@ -1,4 +1,6 @@
 import "./UserLocations.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export default function UserLocations(props) {
   return (
@@ -14,7 +16,7 @@ export default function UserLocations(props) {
                   value={location.id}
                   onClick={props.deleteLocation}
                 >
-                  x
+                  <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </span>
             </li>

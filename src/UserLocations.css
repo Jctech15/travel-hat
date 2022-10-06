@@ -2,32 +2,37 @@
   overflow-y: auto;
   height: 18rem;
   width: 15rem;
-  border: 2px solid black;
+  border: 2px solid #4a4a4a;
   margin: 1rem auto 2rem;
   border-radius: 0.2rem;
 }
 
 .displayedLocation li {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  margin: 0.5rem;
+  text-align: start;
+  font-weight: bold;
 }
 
 .displayedLocation #flexGrow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-grow: 2;
 }
 
 .displayedLocation .deleteButton button {
+  display: flex;
+  justify-content: flex-end;
   background-color: #61c0bf;
   color: white;
   border: none;
-  margin: auto 0.2rem;
   border-radius: 0.3rem;
 }
 .displayedLocation .deleteButton button:hover {
   background-color: white;
   color: #61c0bf;
   border: 1px solid #61c0bf;
-  margin: auto 0.2rem;
   border-radius: 0.3rem;
 }

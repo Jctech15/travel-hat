@@ -24,11 +24,11 @@ export default function LocationModal(props) {
     <div className="LocationModal">
       <Modal open={props.openModal} onClose={props.handleClose}>
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-title" variant="h3" component="h2">
             {props.randomLocationOuput}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            GET ON THE PLANE!
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
+            GO BOOK YOUR FLIGHT!
           </Typography>
         </Box>
       </Modal>
