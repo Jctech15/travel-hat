@@ -1,67 +1,35 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import { useEffect, useState } from "react";
+// import axios from "axios";
 import "./UserTravel.css";
-import TopHat from "./TopHat";
+// import TopHat from "./TopHat";
 import UserSubmitButton from "./UserSubmitButton";
 import UserLocations from "./UserLocations";
 
-//Todo
-// Magic Hat click => pop up of the random location
-// scroll bar for all the Locations
-// Footer
-
 export default function UserTravel() {
-  const [location, setLocation] = useState("");
   const [allLocations, setAllLocations] = useState([]);
 
+  //initializing allLocations state
   useEffect(() => {
-    displayLocation();
-  }, [allLocations]);
+    const locations = JSON.parse(localStorage.getItem("userLocations")) || [];
+    setAllLocations(locations);
+  }, []);
 
-  async function onChange(event) {
-    setLocation(event.target.value);
+  async function handleSubmit(location) {
+    const returnInputLocation = localStorage.getItem("userLocations");
+    const allUserLocations = returnInputLocation
+      ? JSON.parse(returnInputLocation)
+      : [];
+
+    allUserLocations.push(location);
+
+    setAllLocations(allUserLocations);
+
+    localStorage.setItem("userLocations", JSON.stringify(allUserLocations));
   }
+  // async function displayLocation(event) {}
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const body = JSON.stringify({
-      id: uuidv4(),
-      name: location,
-    });
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const result = await axios.post(
-      "http://localhost:3001/locations",
-      body,
-      config
-    );
-    if (result.status === 200) {
-      setAllLocations([...allLocations, location]);
-    }
-    setLocation("");
-  }
+  // async function deleteLocation(event) {}
 
-  async function displayLocation(event) {
-    const userLocation = await axios.get("http://localhost:3001/all/locations");
-    setAllLocations(userLocation.data);
-  }
-
-  async function deleteLocation(event) {
-    const locationId = event.target.value;
-    const deleteRequest = await axios.delete(
-      `http://localhost:3001/locations/${locationId}`
-    );
-
-    if (deleteRequest.status === 200) {
-      setAllLocations([
-        allLocations.filter((location) => location.Id !== locationId),
-      ]);
-    }
-  }
   return (
     <div className="UserTravel">
       <div className="background">
@@ -83,11 +51,7 @@ export default function UserTravel() {
           <li className="section" id="instructions">
             <h3 className="sectionHeader">Instructions</h3>
             <p>Type the name of the place you want to visit! </p>
-            <UserSubmitButton
-              handleSubmit={handleSubmit}
-              onChange={onChange}
-              location={location}
-            />
+            <UserSubmitButton handleSubmit={handleSubmit} />
           </li>
           <li className="section" id="locations">
             <h3 className="sectionHeader">Locations</h3>
@@ -95,11 +59,7 @@ export default function UserTravel() {
               This is the list of all the countries you entered! <br />
               Feel free to delete using the "x" button
             </p>
-            <UserLocations
-              allLocations={allLocations}
-              location={location}
-              deleteLocation={deleteLocation}
-            />
+            <UserLocations allLocations={allLocations} />
           </li>
           <li className="section" id="tophat">
             <h3 className="sectionHeader">Magic Hat!</h3>
@@ -107,7 +67,7 @@ export default function UserTravel() {
               The hat will shake when you put your mouse over it. <br />
               Click the hat to receive a random location!
             </p>
-            <TopHat allLocations={allLocations} />
+            {/* <TopHat /> */}
           </li>
         </ul>
       </section>

@@ -1,21 +1,33 @@
+import { useState } from "react";
 import "./UserSubmitButton.css";
 
 export default function UserSubmitButton(props) {
+  const [location, setLocation] = useState("");
+
+  async function onChange(event) {
+    setLocation(event.target.value);
+  }
+
+  async function handleSubmit(event, location) {
+    event.preventDefault();
+    props.handleSubmit(location);
+  }
+
   return (
     <div className="UserSubmitButton">
-      <form onSubmit={(event) => props.handleSubmit(event)}>
+      <form onSubmit={(event) => handleSubmit(event, location)}>
         <input
+          onChange={onChange}
+          value={location}
           type="text"
           name="userLocation"
           id="userLocation"
           placeholder="Type location"
-          onChange={(event) => props.onChange(event)}
-          value={props.location}
           autoComplete="off"
           size="25"
-          required
           minlength="2"
           spellCheck="true"
+          required
         />
         <button id="submitButton" type="submit">
           Submit
