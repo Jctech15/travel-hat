@@ -14,7 +14,7 @@ export default function UserTravel() {
     setAllLocations(locations);
   }, []);
 
-  async function handleSubmit(location) {
+  function handleSubmit(location) {
     const returnInputLocation = localStorage.getItem("userLocations");
     const allUserLocations = returnInputLocation
       ? JSON.parse(returnInputLocation)
@@ -26,9 +26,20 @@ export default function UserTravel() {
 
     localStorage.setItem("userLocations", JSON.stringify(allUserLocations));
   }
-  // async function displayLocation(event) {}
 
-  // async function deleteLocation(event) {}
+  function fetchUserLocations() {
+    return JSON.parse(localStorage.getItem("userLocations"));
+  }
+
+  function deleteLocation(location) {
+    let currentLocations = fetchUserLocations();
+    const index = currentLocations.indexOf(location);
+    console.log(location, index);
+
+    currentLocations.splice(index, 1);
+    setAllLocations(currentLocations);
+    localStorage.setItem("userLocations", JSON.stringify(currentLocations));
+  }
 
   return (
     <div className="UserTravel">
@@ -59,7 +70,10 @@ export default function UserTravel() {
               This is the list of all the countries you entered! <br />
               Feel free to delete using the "x" button
             </p>
-            <UserLocations allLocations={allLocations} />
+            <UserLocations
+              allLocations={allLocations}
+              deleteLocation={deleteLocation}
+            />
           </li>
           <li className="section" id="tophat">
             <h3 className="sectionHeader">Magic Hat!</h3>

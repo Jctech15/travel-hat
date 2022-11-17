@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export default function UserLocations(props) {
-  function fetchUserLocations() {
-    return JSON.parse(localStorage.getItem("userLocations"));
+  async function deleteLocation(event, location) {
+    event.preventDefault();
+    props.deleteLocation(location);
   }
 
   return (
@@ -18,7 +19,7 @@ export default function UserLocations(props) {
                 <button
                   type="button"
                   value={location}
-                  // onClick={deleteLocation}
+                  onClick={(event) => deleteLocation(event, location)}
                 >
                   <FontAwesomeIcon icon={faTrashCan} />
                 </button>
