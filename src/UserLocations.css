@@ -25,14 +25,13 @@
 .displayedLocation .deleteButton button {
   display: flex;
   justify-content: flex-end;
-  background-color: #61c0bf;
-  color: white;
+  background-color: transparent;
+  color: blue;
   border: none;
-  border-radius: 0.3rem;
+  font-size: 1.2rem;
 }
 .displayedLocation .deleteButton button:hover {
-  background-color: white;
-  color: #61c0bf;
-  border: 1px solid #61c0bf;
-  border-radius: 0.3rem;
+  background-color: transparent;
+  color: red;
+  font-weight: bold;
 }

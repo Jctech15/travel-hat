@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
 import "./UserTravel.css";
-// import TopHat from "./TopHat";
+import TopHat from "./TopHat";
 import UserSubmitButton from "./UserSubmitButton";
 import UserLocations from "./UserLocations";
 
@@ -34,7 +33,6 @@ export default function UserTravel() {
   function deleteLocation(location) {
     let currentLocations = fetchUserLocations();
     const index = currentLocations.indexOf(location);
-    console.log(location, index);
 
     currentLocations.splice(index, 1);
     setAllLocations(currentLocations);
@@ -81,7 +79,7 @@ export default function UserTravel() {
               The hat will shake when you put your mouse over it. <br />
               Click the hat to receive a random location!
             </p>
-            {/* <TopHat /> */}
+            <TopHat fetchUserLocations={fetchUserLocations} />
           </li>
         </ul>
       </section>

@@ -3,7 +3,13 @@ import "./TopHat.css";
 import LocationModal from "./LocationModal";
 
 export default function TopHat(props) {
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+
   function selectRandomLocation() {
+    const allLocations = props.fetchUserLocations();
+    const randomLocationIndex = Math.floor(Math.random() * allLocations.length);
+    setSelectedLocation(allLocations[randomLocationIndex]);
     setOpenModal(true);
   }
 
@@ -17,7 +23,11 @@ export default function TopHat(props) {
         <img src="img/tophat.png" alt="tophat" />
       </button>
 
-      <LocationModal />
+      <LocationModal
+        selectedLocation={selectedLocation}
+        openModal={openModal}
+        handleClose={handleClose}
+      />
     </div>
   );
 }

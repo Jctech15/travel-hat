@@ -1,11 +1,6 @@
-import "./LocationModal.css";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-/* import Backdrop from "@mui/material/Backdrop";
-import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
- */
 
 const style = {
   position: "absolute",
@@ -25,7 +20,7 @@ export default function LocationModal(props) {
       <Modal open={props.openModal} onClose={props.handleClose}>
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h3" component="h2">
-            {props.randomLocationOuput}
+            {props.selectedLocation}
           </Typography>
           <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             GO BOOK YOUR FLIGHT!
