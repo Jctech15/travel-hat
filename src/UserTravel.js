@@ -50,6 +50,8 @@ export default function UserTravel() {
       <main>
         <h2>Your Dream Travel Locations</h2>
         <p>
+          Having trouble deciding where to visit? <br />
+          You have came to the right place <br />
           Follow the insturctions to receive a randomly chosen vacation
           location!
         </p>
@@ -59,14 +61,17 @@ export default function UserTravel() {
         <ul className="flex">
           <li className="section" id="instructions">
             <h3 className="sectionHeader">Instructions</h3>
-            <p>Type the name of the place you want to visit! </p>
+            <p>
+              Type the name of the place you want to visit! <br />
+              It should be at least 2 letters.
+            </p>
             <UserSubmitButton handleSubmit={handleSubmit} />
           </li>
           <li className="section" id="locations">
             <h3 className="sectionHeader">Locations</h3>
             <p>
-              This is the list of all the countries you entered! <br />
-              Feel free to delete using the "x" button
+              This is the list of all the locations you entered! <br />
+              Feel free to delete using the trashcan icon.
             </p>
             <UserLocations
               allLocations={allLocations}
@@ -76,8 +81,9 @@ export default function UserTravel() {
           <li className="section" id="tophat">
             <h3 className="sectionHeader">Magic Hat!</h3>
             <p>
-              The hat will shake when you put your mouse over it. <br />
-              Click the hat to receive a random location!
+              Put your mouse over the magic hat <br />
+              The hat should start shaking. <br />
+              Left Click the hat once to receive a random location!
             </p>
             <TopHat fetchUserLocations={fetchUserLocations} />
           </li>
@@ -85,7 +91,7 @@ export default function UserTravel() {
       </section>
 
       <footer>
-        <p>
+        <p id="credit">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
           reiciendis? Adipisci voluptatibus ducimus doloremque in necessitatibus
           ullam cupiditate illum, tempore quo nihil nam eos est reprehenderit ex

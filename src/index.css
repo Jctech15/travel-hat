@@ -11,7 +11,7 @@ body {
 
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.8)
     ),
     url("../public/img/plane-window-seat.jpg");
   background-repeat: no-repeat;
